@@ -7,7 +7,7 @@
 #At the end of 100 passes, what doors are opened and what doors are closed?
 
 #Solution:
-#This soution is focused on high memory optimization on the cost of processing time.
+#This solution is focused on high memory optimization on the cost of processing time.
 #An array of four 32 bit integer is used to store status of 100 doors. Each bit in a integer represents a door. Set bit (1) represents open door and reset bit (0) represents closed door. Bitwise shifting is used to access each bit.
 
 
