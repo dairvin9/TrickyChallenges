@@ -2,22 +2,25 @@
 # 5678
 # 9abc
 # defg
-pic = [[1,2,3],[4,5,6],[7,8,9],['a','b','c']]	
+import math
+
+pic = [[1,2,3],[4,5,6],[7,8,9]]	
 print(pic)
 
-def multiswap(a,b,c,d):
-    d,a,b,c = a,b,c,d
-    return a,b,c,d
 
-
-def rotate():
-    num_rotations = round(len(pic)/2)
-    num_to_swap = len(pic) - 1
+def rotate(square):
+    num_rotations = math.floor(len(square)/2)
+    len_square = len(square)
     
-    for x in range(0,num_rotations):
-        multiswap(pic[0][0],pic[3][0],pic[3][3],pic[0][3])
-
+    for rotation in range(num_rotations):    
+    # index should be number of swaps
+        for index in range(0,len_square - 2*rotation - 1):
+             
+            square[rotation + index][rotation], square[len_square - rotation - 1][rotation + index], square[len_square - rotation - index - 1][len_square - rotation - 1], square[rotation][len_square - rotation - index - 1] = square[len_square - rotation - 1][rotation + index], square[len_square - rotation - index - 1][len_square - rotation - 1], square[rotation][len_square - rotation - index - 1], square[rotation + index][rotation] 
+        return square        
 def ifZeroSetZero(pic):
-                
-print(pic)        
+    pass            
+
+    
+print(rotate(pic))        
  
